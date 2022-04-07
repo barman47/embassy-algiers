@@ -105,10 +105,6 @@ const ViewNigeria = () => {
 						<Typography variant="subtitle2" component="p">Refineries and Petrochemicals: Kaduna, Warn, Port Harcourt, Eleme. iron and Steel: Ajaokuta, Warri, Oshogbo, Katsina, Jos. Fertilizer: Orme. Pert Harcourt, Kaduna, Minna, Kano Liquified Natural Gas: Bon, Aluminium Smelter: IkOt Abasi, Port Harcourt</Typography>
 					</Box>
 					<Box component="div" className={classes.fact}>
-						<Typography variant="h6" className={classes.title}>Major Industrial Complexes:</Typography>
-						<Typography variant="subtitle2" component="p">Refineries and Petrochemicals: Kaduna, Warn, Port Harcourt, Eleme. iron and Steel: Ajaokuta, Warri, Oshogbo, Katsina, Jos. Fertilizer: Orme. Pert Harcourt, Kaduna, Minna, Kano Liquified Natural Gas: Bon, Aluminium Smelter: IkOt Abasi, Port Harcourt</Typography>
-					</Box>
-					<Box component="div" className={classes.fact}>
 						<Typography variant="h6" className={classes.title}>Main Ports:</Typography>
 						<Typography variant="subtitle2" component="p">Lag. (AM, Tin-can Island), Warn, Port Harcourt, Onne Deep Sea and Flub Pon, Calabar (EPZ)</Typography>
 					</Box>
