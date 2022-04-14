@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { ArrowRight } from 'mdi-material-ui';
 
 import { COLORS } from '../../utils/constants';
-import { ABOUT_US } from '../../routes';
+import { VIEW_NIGERIA } from '../../routes';
 
 import img from '../../images/nigeria.jpg';
 
@@ -74,7 +74,7 @@ const AboutUs = () => {
     const classes = useStyles();
 
     return (
-        <section className={classes.root}>
+        <section className={classes.root} id={VIEW_NIGERIA}>
             <div>
                 <Typography variant="h4" className={classes.header}>View Nigeria</Typography>
                 <Typography variant="body2" className={classes.text}>
@@ -83,7 +83,7 @@ const AboutUs = () => {
                 <Button
                     className={classes.button}
                     variant="contained"
-                    to={ABOUT_US}
+                    to={VIEW_NIGERIA}
                     component={Link}
                     endIcon={<ArrowRight />}
                 >

@@ -3,6 +3,7 @@ import { Button, Typography } from '@material-ui/core';
 import { ApplicationCog } from 'mdi-material-ui';
 
 import { COLORS } from '../../utils/constants';
+import { SERVICES } from '../../routes';
 
 import formulaire from '../../assets/formulaire visa NigÃ©ria.pdf';
 import imm22 from '../../assets/Nigeria embassy visa form imm22.pdf';
@@ -77,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
 const Services = () => {
 	const classes = useStyles();
 	return (
-		<section className={classes.root}>
+		<section className={classes.root} id={SERVICES}>
 			<Typography className={classes.headertext} variant="h4">Consuler Services</Typography>
 			<Typography variant="h6" className={classes.subtitle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, ea.</Typography>
 			<div className={classes.services}>

@@ -2,9 +2,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@material-ui/core';
 
 import Home from './pages/home';
-import CovidRequirements from './pages/CovidRequirements';
-import FourthWave from './pages/FourthWave';
 import ViewNigeria from './pages/viewNigeria';
+import Gallery from './pages/gallery';
+import News from './pages/news';
+import ConsulerServices from './pages/services';
+
+import { GALLERY, NEWS, SERVICES, VIEW_NIGERIA } from './routes';
 
 const App = () => {
 	const theme = createTheme({
@@ -56,9 +59,10 @@ const App = () => {
 		<ThemeProvider theme={theme}>
 			<Router>
 				<Route path="/" exact component={Home} />
-				<Route path="/viewNigeria" exact component={ViewNigeria} />
-				<Route path="/covidRequirements" exact component={CovidRequirements} />
-				<Route path="/fourthWave" exact component={FourthWave} />
+				<Route path={VIEW_NIGERIA} exact component={ViewNigeria} />
+				<Route path={GALLERY} exact component={Gallery} />
+				<Route path={NEWS} exact component={News} />
+				<Route path={SERVICES} exact component={ConsulerServices} />
 			</Router>
 		</ThemeProvider>
 	);

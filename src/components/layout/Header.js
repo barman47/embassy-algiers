@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { Link as AnimatedLink } from 'react-scroll';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {
 	AppBar,
+	Box,
 	Button,
-	Grid,
 	IconButton,
-	Link,
 	Slide,
 	Toolbar,
 	Typography,
@@ -19,6 +19,7 @@ import { COLORS } from '../../utils/constants';
 import logo from '../../images/coat-of-arms.png';
 
 import MobileNav from './MobileNav';
+import { GALLERY, NEWS, SERVICES, VIEW_NIGERIA } from '../../routes';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 	toolbar: {
 		display: 'grid',
-		gridTemplateColumns: '1fr 4fr 1fr',
+		gridTemplateColumns: '0.5fr 4fr 0.5fr',
 		columnGap: theme.spacing(5),
 
 		[theme.breakpoints.down('md')]: {
@@ -36,10 +37,16 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	logo: {
-		width: '50%',
+		width: '40%',
 		[theme.breakpoints.down('sm')]: {
 			width: '100%'
 		}
+	},
+
+	links: {
+		display: 'grid',
+		gridTemplateColumns: 'repeat(5, 1fr)',
+		justifyContent: 'center',
 	},
 
 	smallLogo: {
@@ -51,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
 
 	link: {
 		color: COLORS.offWhite,
+		cursor: 'pointer',
 		fontWeight: 300
 	},
 
@@ -111,7 +119,17 @@ HideOnScroll.propTypes = {
 
 const Header = (props) => {
 	const classes = useStyles();
+	const location = useLocation();
+
     const [drawerOpen, setDrawerOpen] = useState(false);
+
+	const links = [
+		{ url: '/', text: 'Home'},
+		{ url: SERVICES, text: 'Consuler Services' },
+		{ url: VIEW_NIGERIA, text: 'View Nigeria' },
+		{ url: NEWS, text: 'News/Updates' },
+		{ url: GALLERY, text: 'Gallery' }
+	];
 
     const toggleDrawer = () => {
         setDrawerOpen(!drawerOpen);
@@ -121,21 +139,38 @@ const Header = (props) => {
 		<HideOnScroll {...props}>
 			<AppBar position="fixed" className={classes.root}>
 				<Toolbar className={classes.toolbar}>
-					<img src={logo} className={classes.logo} alt="Nigerian Coat of Arms" />
-					<Grid container direction="row" spacing={1}>
-						<Grid item xs={3}>
-							<Link component={RouterLink} className={classes.link}>Consuler Services</Link>
-						</Grid>
-						<Grid item xs={3}>
-							<Link to="viewNigeria" component={RouterLink} className={classes.link}>View Nigeria</Link>
-						</Grid>
-						<Grid item xs={3}>
-							<Link component={RouterLink} className={classes.link}>News/Updates</Link>
-						</Grid>
-						<Grid item xs={3}>
-							<Link component={RouterLink} className={classes.link}>Gallery</Link>
-						</Grid>
-					</Grid>
+					<RouterLink to="/"><img src={logo} className={classes.logo} alt="Nigerian Coat of Arms" /></RouterLink>
+					<Box component="div" className={classes.links}>
+						{links.map((link, index) => {
+							if (location.pathname === '/') {
+								return (
+									<AnimatedLink 
+										key={index}
+										to={link.url} 
+										// activeClass={classes.activeLink} 
+										spy={true}
+										smooth={true}
+										offset={-70}
+										duration={500}
+										className={classes.link}
+										// className={clsx({ [classes.link]: scrollPosition < 100, [classes.scrollingLink]: scrollPosition > 100 })}
+									>
+										{link.text}
+									</AnimatedLink>
+								)
+							}
+							return (
+								<RouterLink 
+									key={index}
+									to={link.url} 
+									className={classes.link}
+									// className={clsx({ [classes.link]: scrollPosition < 100, [classes.scrollingLink]: scrollPosition > 100 })}
+								>
+									{link.text}
+								</RouterLink>
+							);
+						})}
+					</Box>
 					<Button component={RouterLink} className={classes.contactButton}>Contact</Button>
 				</Toolbar>
 				<div className={classes.mobileNav}>

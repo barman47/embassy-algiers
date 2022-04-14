@@ -10,6 +10,8 @@ import {
 } from '@material-ui/core';
 import { Information } from 'mdi-material-ui';
 
+import { GALLERY } from '../../routes';
+
 import slide1 from '../../images/slide1.jpg';
 import slide2 from '../../images/slide2.jpg';
 import slide3 from '../../images/slide3.jpg';
@@ -70,7 +72,7 @@ const Gallery = () => {
   	const classes = useStyles();
 
 	return (
-		<section className={classes.root}>
+		<section className={classes.root} id={GALLERY}>
 			<Typography variant="h4">Gallery</Typography><br/>
 			<ImageList rowHeight={180} className={classes.imageList}>
 				{itemData.map((item) => (
@@ -88,7 +90,7 @@ const Gallery = () => {
 				</ImageListItem>
 				))}
 			</ImageList>
-			<Button component={RouterLink} variant="contained" color="primary" className={classes.btn}>View Gallery</Button>
+			<Button component={RouterLink} to={GALLERY} variant="contained" color="primary" className={classes.btn}>View Gallery</Button>
 		</section>
 	);
 };

@@ -13,6 +13,8 @@ import {
 } from '@material-ui/core';
 import TextClamp from 'react-string-clamp';
 
+import { NEWS } from '../../routes';
+
 import img from '../../images/slide4.jpg';
 
 const useStyles = makeStyles((theme) => ({
@@ -49,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
 const NewsUpdates = () => {
   const classes = useStyles();
   return (
-    <Container className={classes.root}>
+    <Container className={classes.root} id={NEWS}>
         <Typography variant="h4">News and Updates</Typography><br/>
         <Grid container spacing={3}>
           <Grid item xs={30} sm={6} md={4}>
@@ -112,7 +114,7 @@ const NewsUpdates = () => {
                           </CardContent>
                         </CardActionArea>
                         <CardActions>
-                          <Button component={RouterLink} size="small" variant="outlined" color="primary" className={classes.btn} to="/covidRequirements">
+                          <Button to={NEWS} component={RouterLink} size="small" variant="outlined" color="primary" className={classes.btn}>
                             Read more
                           </Button>
                         </CardActions>
