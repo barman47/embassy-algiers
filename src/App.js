@@ -7,7 +7,25 @@ import Gallery from './pages/gallery';
 import News from './pages/news';
 import ConsulerServices from './pages/services';
 
-import { GALLERY, NEWS, SERVICES, VIEW_NIGERIA } from './routes';
+import { 
+	GALLERY, 
+	GOVERNMENT_AND_POLITICS,
+	NEWS, 
+	SERVICES, 
+	VIEW_NIGERIA,
+	PASSPORT_APPLICATION,
+	TRADE_AND_INVESTMENT,
+	TRAVEL_REQUIREMENTS,
+	TOURISM,
+	ECONOMY
+} from './routes';
+
+import PassportApplication from './pages/services/PassportApplication';
+import TravellingRequirements from './pages/services/TravellingRequirements';
+import Tourism from './pages/viewNigeria/Tourism';
+import NigerianEconomy from './pages/viewNigeria/NigerianEconomy';
+import GovernmentAndPolitics from './pages/viewNigeria/GovernmentAndPolitics';
+import TradeAndInvestment from './pages/viewNigeria/TradeAndInvestment';
 
 const App = () => {
 	const theme = createTheme({
@@ -63,6 +81,12 @@ const App = () => {
 				<Route path={GALLERY} exact component={Gallery} />
 				<Route path={NEWS} exact component={News} />
 				<Route path={SERVICES} exact component={ConsulerServices} />
+				<Route path={PASSPORT_APPLICATION} exact component={PassportApplication} />
+				<Route path={TRAVEL_REQUIREMENTS} exact component={TravellingRequirements} />
+				<Route path={TOURISM} exact component={Tourism} />
+				<Route path={ECONOMY} exact component={NigerianEconomy} />
+				<Route path={GOVERNMENT_AND_POLITICS} exact component={GovernmentAndPolitics} />
+				<Route path={TRADE_AND_INVESTMENT} exact component={TradeAndInvestment} />
 			</Router>
 		</ThemeProvider>
 	);

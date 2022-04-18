@@ -8,6 +8,10 @@ import {
 	Box,
 	Button,
 	IconButton,
+	Link,
+	List,
+	ListItem,
+	Menu,
 	Slide,
 	Toolbar,
 	Typography,
@@ -19,7 +23,16 @@ import { COLORS } from '../../utils/constants';
 import logo from '../../images/coat-of-arms.png';
 
 import MobileNav from './MobileNav';
-import { GALLERY, NEWS, SERVICES, VIEW_NIGERIA } from '../../routes';
+import { 
+	ECONOMY,
+	GALLERY, 
+	GOVERNMENT_AND_POLITICS, 
+	NEWS, 
+	SERVICES,
+	TOURISM,
+	TRADE_AND_INVESTMENT,
+	VIEW_NIGERIA 
+} from '../../routes';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -45,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
 
 	links: {
 		display: 'grid',
-		gridTemplateColumns: 'repeat(5, 1fr)',
+		gridTemplateColumns: 'repeat(6, 1fr)',
 		justifyContent: 'center',
 	},
 
@@ -59,7 +72,8 @@ const useStyles = makeStyles((theme) => ({
 	link: {
 		color: COLORS.offWhite,
 		cursor: 'pointer',
-		fontWeight: 300
+		fontWeight: 300,
+		textDecoration: 'none'
 	},
 
 	contactButton: {
@@ -122,18 +136,54 @@ const Header = (props) => {
 	const location = useLocation();
 
     const [drawerOpen, setDrawerOpen] = useState(false);
+	const [anchorEl, setAnchorEl] = useState(null);
+	const [anchorEl2, setAnchorEl2] = useState(null);
 
 	const links = [
 		{ url: '/', text: 'Home'},
 		{ url: SERVICES, text: 'Consuler Services' },
-		{ url: VIEW_NIGERIA, text: 'View Nigeria' },
 		{ url: NEWS, text: 'News/Updates' },
 		{ url: GALLERY, text: 'Gallery' }
+	];
+
+	const viewNigeriaLinks = [
+		{ url: VIEW_NIGERIA, text: 'About Nigeria'},
+		{ url: TOURISM, text: 'Tourism' },
+		{ url: TRADE_AND_INVESTMENT, text: 'Trade and Investment' },
+		{ url: ECONOMY, text: 'Nigerian Economy' },
+		{ url: GOVERNMENT_AND_POLITICS, text: 'Governmet & Politics' }
+	];
+
+	const nigerianNewspapers = [
+		{ url: 'https://punchng.com/', text: 'Punch'},
+		{ url: 'https://www.newswatchngr.com/', text: 'Newswatch' },
+		{ url: 'https://guardian.ng/', text: 'Guardian' },
+		{ url: 'https://www.vanguardngr.com/', text: 'Vanguard' },
+		{ url: 'https://www.sunnewsonline.com/', text: 'The Sun' }
 	];
 
     const toggleDrawer = () => {
         setDrawerOpen(!drawerOpen);
     };
+
+
+	const handleClick = (event) => {
+		event.preventDefault();
+		setAnchorEl(event.currentTarget);
+	};
+
+	const handleMenuClick = (event) => {
+		event.preventDefault();
+		setAnchorEl2(event.currentTarget);
+	};
+
+	const handleClose = () => {
+		setAnchorEl(null);
+	};
+
+	const handleClose2 = () => {
+		setAnchorEl2(null);
+	};
 
 	return (
 		<HideOnScroll {...props}>
@@ -170,8 +220,51 @@ const Header = (props) => {
 								</RouterLink>
 							);
 						})}
+						<Typography 
+							className={classes.link}
+							variant="body2"
+							component="p"
+							onClick={handleClick}
+						>
+							About Nigeria
+						</Typography>
+						<Typography 
+							className={classes.link}
+							variant="body2"
+							component="p"
+							onClick={handleMenuClick}
+						>
+							Nigerian Newspapers
+						</Typography>
 					</Box>
 					<Button component={RouterLink} className={classes.contactButton}>Contact</Button>
+					<Menu
+						id="view-nigeria-menu"
+						anchorEl={anchorEl2}
+						keepMounted
+						open={Boolean(anchorEl2)}
+						onClose={handleClose2}
+					>
+						<List>
+							{nigerianNewspapers.map((link, index) => (
+								<ListItem onClick={handleClose} ><Link component="a" href={link.url} target="_blank">{link.text}</Link></ListItem>
+							))}
+						</List>
+					</Menu>
+					<Menu
+						id="view-nigeria-menu"
+						anchorEl={anchorEl}
+						keepMounted
+						open={Boolean(anchorEl)}
+						onClose={handleClose}
+					>
+						<List>
+							{viewNigeriaLinks.map((link, index) => (
+								<ListItem key={index}><Link component={RouterLink} to={link.url}>{link.text}</Link></ListItem>
+							))}
+							<ListItem onClick={handleClose} ><Link component="a" href="https://portal.immigration.gov.ng/" target="_blank">Immigration</Link></ListItem>
+						</List>
+					</Menu>
 				</Toolbar>
 				<div className={classes.mobileNav}>
 					{/* <Link to="/"> */}

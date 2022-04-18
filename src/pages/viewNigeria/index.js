@@ -4,6 +4,8 @@ import { COLORS } from '../../utils/constants';
 
 import Layout from '../../components/layout';
 
+import map from '../../assets/img/map.png';
+
 const useStyles = makeStyles((theme) => ({
 	root: {
 		'& article': {
@@ -14,6 +16,8 @@ const useStyles = makeStyles((theme) => ({
 			width: '90vw',
 
 			'& p': {
+				fontWeight: 300,
+				fontSize: theme.spacing(2),
 				marginBottom: theme.spacing(2),
 				textAlign: 'justify'
 			}
@@ -32,7 +36,9 @@ const useStyles = makeStyles((theme) => ({
 		},
 
 		'& p': {
-			color: COLORS.offBlack
+			color: COLORS.offBlack,
+			fontWeight: 300,
+			fontSize: theme.spacing(2)
 		}
 	},
 
@@ -50,24 +56,14 @@ const ViewNigeria = () => {
 			<Box component="section" className={classes.root}>
 				<Typography variant="h4" align="center" style={{ marginTop: theme.spacing(2) }}>View Nigeria</Typography>
 				<Paper component="article">
-					<Typography variant="h6" className={classes.mainTitle} color="primary">RELATIONS BETWEEN NIGERIA AND ALGERIA</Typography>
-					<Typography variant="body2" component="p">
-						Nigeria and Algeria established diplomatic relations immediately after Algeria attained her independence in 1962. Since then, relations between the hvo countries have remained very cordial. Relations got a boost during the government of former President Olusegun Obasanjo and late President Abdulaziz Bouteflika, following democratic elections in the two Countries in 1999, and the personal rapport between the hvo leaders. It would be recalled that the two former Presidents along with other African leaders realised that one of the easiest ways to develop African economy was through effective antra - African trade. A practical step was taken IDY these leaders towards the real,zabon of this objective by way of developing an integrated so., economic development framework for Africa. This gave birth to the New Partnership for Africa's Development fNEPAD, in 200Iwhich has, as one of iLC objectives, the placement of African countries, both singularly and collectively, on a path of sustainable growth and development. It set as Its priorities establishing the conditions for sustainable development as well as policy reform and increased investment in key priority sectors. These include building and improving infrastructure as well as information and communication technology.
-					</Typography>
-					<Typography variant="body2" component="p">
-						Nigeria and Algeria have continued to enjoy cordial understand, at the multilateral fora, consulting and supporting each other on decisions involving our continent. To this end, the Group of Four (G+4) comprising Algeria, Ethiopia, Nigena and South Africa was form. in Addis Ababa, The four countries have continued to forge common understanding on several issues which has helped in no small measure in shaping important decrsions of the OAU and later the African Union (AU). The two countries have also enjoyed a long term reciprocal support for each other's candidates vying for positions in multilateral organisations such as AU, UN, ITC, .0, WIPO, UNCAP, CERD, UNESCO, UNNRC etc,
-					</Typography>
-					<Typography variant="body2" component="p">
-						Algeria has been fighting anthterronsm war against militants since 1992 when nation., election was cancelled by the military because the Islamic Salvation Front was pots. to win. Although the militancy, has subsided, recent even. in Libya have made the Algeria military to be on high alert guarding their boarder. As the influence of ISIS, Al-Qa. in the Isiatme Maghreb IAQIM) and other terrorist groups in Southern Libya a. NOrthern Mali we- gaining gr.., The Algerian government responded by nching total war on terror in its territory, especially the border towns and mountainous areas. The Algerian security operatives have continued to hunt the terrorists and their affiliates. The country has devised several strategies in dealing with terror, including fabrication of local equipment to aid detecbon of explosives. In both cities and villages, the police are found in every nooks and crannies holding the equipment and other devices for detecting bomb and explosives. 'Therefore, the level of attack by terrorists has been brought to the barest minimum by the Algerian security age.. In view of Algena's success In curtailing terrorism, the Nigerian government sought for security collaboration between the two countries and this far, Algeria has provided tremendous support to Nigeria to curtail itr security challenges. Nigeria was assisted with bomb detecting equipment and security services of the two countries share intelligence. Nigeria is currently member of the Algerian - based Fusion and Liaison Unit (UFL), an outfit established by the countries of the Sahel Region to collate and share intelligence on terrorism and terrorist activities. The two countries also signed a Security Cooperation Agreement.
-					</Typography>
-					<Typography variant="body2" component="p">
-						Furthermore, Algeria has the biggest landmass in Africa and most Nigerians migrating to Europe, No. Africa and Middle East pass through the Algeria? territory:, k Initially Algeria was a transit count, for the migrants. However, due:,..,1.‘Ongntic-' development, the country has become a destination to migrants from various Sub-Saharan African countries including Nigeria. Most Nigerians living in Algeria are unskilled, ladUng any vocational training or academic qualification. Some claim to be victims of human trafficking who found themselves in Algeria after paying huge amounts to be trafficked to Europe. It is estimated that about 2,000 Nigerians are living in Algeria and most of them are staying Illegally. Some are engaged in illicit drug trafficking.and fraudulent activities (419. 3It is Important to mention that many Nigerians perished while crossing the desert to reach Algiers. Some died from starvation and thirst, while others lost their lives to robbers and rapists. Regrettably the few Nigerians living in Algeria with genuine businesses find it hard to obtain necessary residence permit and other legal documents to freely carry out their activities. Therefore, they find themselves constantly being harassed by Security Agents. Under the Consular Cooperation Agreement signed between the two countries there was provision which stipuleted sharing cost for repatriation of illegal immigrants.
-					</Typography>
-					<Typography variant="body2" component="p">
-						Fission has continued to appeal to the Algerian authorities to consider the plight of flans wishing to stay legally In Ute count, as migration Is now generally accepted as a universal phenomenon. -Recently;.‘hO'Algerian government had relax.. rules on immigrants. It hardly apprehends any African for lack of papers. They also allow free m..I services to the immigrants at the government hospital. The Algerian government had also come up with a policy of engaging the African in the Agricultural sector and the construction Indust,.
-					</Typography>
-				</Paper>
-				<Paper component="article">
+					<Box component="div">
+						<Typography variant="h6" className={classes.mainTitle} color="primary">About Nigeria</Typography>
+						<Typography variant="body2" component="p">Nigeria is located on the west coast of Africa and is the most populous black country in the world, bordering the North Atlantic Ocean, between Benin and Cameroon. Nigeria covers 356,668 sq miles (923,7770 sq kilometers). It is about the same size as California, Nevada and Utah combined. Nigeria is diverse in people and culture. The history of the country goes back to 500 BC when the Nok people were the inhabitants. It was the ending of the 15th century European explorers and traders began their lucrative slave trade with the Yoruba and Benin peoples. In 1861 Lagos was colonized by the British and 1914, the entire country became The Colony and Protectorate of Nigeria. Nigeria became independent in 1960.</Typography>
+					</Box>
+					<Box component="div">
+						<Typography variant="h6" className={classes.mainTitle} color="primary">Map of Nigeria</Typography>
+						<img src={map} alt="Map of Nigeria" />
+					</Box>
 					<Box component="div" className={classes.fact}>
 						<Typography variant="h6" className={classes.title}>Area:</Typography>
 						<Typography variant="subtitle2" component="p">823,766 sq km</Typography>
@@ -143,6 +139,24 @@ const ViewNigeria = () => {
 						<Typography variant="subtitle2" component="p">The savanna, especially Guinea and Sudan, are the major gra., grasses, tubc-,s. vegetable and cotton growing regions.</Typography>
 						<Typography variant="subtitle2" component="p">The Tropical evergreen rain forest belt bears timber production and forest develoPmel, production of cassava; and plantation growing of fruit trees - citrus, oil palm, cocoa, rubber. among others.</Typography>
 					</Box>
+				</Paper>
+				<Paper component="article">
+					<Typography variant="h6" className={classes.mainTitle} color="primary">RELATIONS BETWEEN NIGERIA AND ALGERIA</Typography>
+					<Typography variant="body2" component="p">
+						Nigeria and Algeria established diplomatic relations immediately after Algeria attained her independence in 1962. Since then, relations between the hvo countries have remained very cordial. Relations got a boost during the government of former President Olusegun Obasanjo and late President Abdulaziz Bouteflika, following democratic elections in the two Countries in 1999, and the personal rapport between the hvo leaders. It would be recalled that the two former Presidents along with other African leaders realised that one of the easiest ways to develop African economy was through effective antra - African trade. A practical step was taken IDY these leaders towards the real,zabon of this objective by way of developing an integrated so., economic development framework for Africa. This gave birth to the New Partnership for Africa's Development fNEPAD, in 200Iwhich has, as one of iLC objectives, the placement of African countries, both singularly and collectively, on a path of sustainable growth and development. It set as Its priorities establishing the conditions for sustainable development as well as policy reform and increased investment in key priority sectors. These include building and improving infrastructure as well as information and communication technology.
+					</Typography>
+					<Typography variant="body2" component="p">
+						Nigeria and Algeria have continued to enjoy cordial understand, at the multilateral fora, consulting and supporting each other on decisions involving our continent. To this end, the Group of Four (G+4) comprising Algeria, Ethiopia, Nigena and South Africa was form. in Addis Ababa, The four countries have continued to forge common understanding on several issues which has helped in no small measure in shaping important decrsions of the OAU and later the African Union (AU). The two countries have also enjoyed a long term reciprocal support for each other's candidates vying for positions in multilateral organisations such as AU, UN, ITC, .0, WIPO, UNCAP, CERD, UNESCO, UNNRC etc,
+					</Typography>
+					<Typography variant="body2" component="p">
+						Algeria has been fighting anthterronsm war against militants since 1992 when nation., election was cancelled by the military because the Islamic Salvation Front was pots. to win. Although the militancy, has subsided, recent even. in Libya have made the Algeria military to be on high alert guarding their boarder. As the influence of ISIS, Al-Qa. in the Isiatme Maghreb IAQIM) and other terrorist groups in Southern Libya a. NOrthern Mali we- gaining gr.., The Algerian government responded by nching total war on terror in its territory, especially the border towns and mountainous areas. The Algerian security operatives have continued to hunt the terrorists and their affiliates. The country has devised several strategies in dealing with terror, including fabrication of local equipment to aid detecbon of explosives. In both cities and villages, the police are found in every nooks and crannies holding the equipment and other devices for detecting bomb and explosives. 'Therefore, the level of attack by terrorists has been brought to the barest minimum by the Algerian security age.. In view of Algena's success In curtailing terrorism, the Nigerian government sought for security collaboration between the two countries and this far, Algeria has provided tremendous support to Nigeria to curtail itr security challenges. Nigeria was assisted with bomb detecting equipment and security services of the two countries share intelligence. Nigeria is currently member of the Algerian - based Fusion and Liaison Unit (UFL), an outfit established by the countries of the Sahel Region to collate and share intelligence on terrorism and terrorist activities. The two countries also signed a Security Cooperation Agreement.
+					</Typography>
+					<Typography variant="body2" component="p">
+						Furthermore, Algeria has the biggest landmass in Africa and most Nigerians migrating to Europe, No. Africa and Middle East pass through the Algeria? territory:, k Initially Algeria was a transit count, for the migrants. However, due:,..,1.‘Ongntic-' development, the country has become a destination to migrants from various Sub-Saharan African countries including Nigeria. Most Nigerians living in Algeria are unskilled, ladUng any vocational training or academic qualification. Some claim to be victims of human trafficking who found themselves in Algeria after paying huge amounts to be trafficked to Europe. It is estimated that about 2,000 Nigerians are living in Algeria and most of them are staying Illegally. Some are engaged in illicit drug trafficking.and fraudulent activities (419. 3It is Important to mention that many Nigerians perished while crossing the desert to reach Algiers. Some died from starvation and thirst, while others lost their lives to robbers and rapists. Regrettably the few Nigerians living in Algeria with genuine businesses find it hard to obtain necessary residence permit and other legal documents to freely carry out their activities. Therefore, they find themselves constantly being harassed by Security Agents. Under the Consular Cooperation Agreement signed between the two countries there was provision which stipuleted sharing cost for repatriation of illegal immigrants.
+					</Typography>
+					<Typography variant="body2" component="p">
+						Fission has continued to appeal to the Algerian authorities to consider the plight of flans wishing to stay legally In Ute count, as migration Is now generally accepted as a universal phenomenon. -Recently;.‘hO'Algerian government had relax.. rules on immigrants. It hardly apprehends any African for lack of papers. They also allow free m..I services to the immigrants at the government hospital. The Algerian government had also come up with a policy of engaging the African in the Agricultural sector and the construction Indust,.
+					</Typography>
 				</Paper>
 			</Box>
 		</Layout>
