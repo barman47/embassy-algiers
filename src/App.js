@@ -17,7 +17,9 @@ import {
 	TRADE_AND_INVESTMENT,
 	TRAVEL_REQUIREMENTS,
 	TOURISM,
-	ECONOMY
+	TWP,
+	ECONOMY,
+	VISA_APPLICATION
 } from './routes';
 
 import PassportApplication from './pages/services/PassportApplication';
@@ -26,6 +28,8 @@ import Tourism from './pages/viewNigeria/Tourism';
 import NigerianEconomy from './pages/viewNigeria/NigerianEconomy';
 import GovernmentAndPolitics from './pages/viewNigeria/GovernmentAndPolitics';
 import TradeAndInvestment from './pages/viewNigeria/TradeAndInvestment';
+import VisaApplication from './pages/services/VisaApplication';
+import TemporaryWorkPermit from './pages/services/TemporaryWorkPermit';
 
 const App = () => {
 	const theme = createTheme({
@@ -87,6 +91,8 @@ const App = () => {
 				<Route path={ECONOMY} exact component={NigerianEconomy} />
 				<Route path={GOVERNMENT_AND_POLITICS} exact component={GovernmentAndPolitics} />
 				<Route path={TRADE_AND_INVESTMENT} exact component={TradeAndInvestment} />
+				<Route path={VISA_APPLICATION} exact component={VisaApplication} />
+				<Route path={TWP} exact component={TemporaryWorkPermit} />
 			</Router>
 		</ThemeProvider>
 	);

@@ -151,7 +151,7 @@ const Header = (props) => {
 		{ url: TOURISM, text: 'Tourism' },
 		{ url: TRADE_AND_INVESTMENT, text: 'Trade and Investment' },
 		{ url: ECONOMY, text: 'Nigerian Economy' },
-		{ url: GOVERNMENT_AND_POLITICS, text: 'Governmet & Politics' }
+		{ url: GOVERNMENT_AND_POLITICS, text: 'Government & Politics' }
 	];
 
 	const nigerianNewspapers = [

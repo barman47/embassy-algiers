@@ -8,3 +8,5 @@ export const TOURISM = '/tourism';
 export const ECONOMY = '/nigerianEconomy';
 export const GOVERNMENT_AND_POLITICS = '/governmentAndPolitics';
 export const TRADE_AND_INVESTMENT = '/tradeAndInvestment';
+export const VISA_APPLICATION = '/visaApplication';
+export const TWP = '/temporaryWorkPermit';

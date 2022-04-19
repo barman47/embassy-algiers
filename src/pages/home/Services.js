@@ -7,12 +7,12 @@ import { COLORS } from '../../utils/constants';
 import { 
 	PASSPORT_APPLICATION,
 	SERVICES,
-	TRAVEL_REQUIREMENTS 
+	TRAVEL_REQUIREMENTS,
+	VISA_APPLICATION,
+	TWP
 } from '../../routes';
 
 import ETC from '../../assets/docs/emergency-travel-certificate.pdf';
-import formulaire from '../../assets/docs/formulaire visa NigÃ©ria.pdf';
-import imm22 from '../../assets/docs/Nigeria embassy visa form imm22.pdf';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -91,13 +91,13 @@ const Services = () => {
 					<ApplicationCog className={classes.serviceIcon} />
 					<Typography variant="h5" color="primary">Visa Application</Typography>
 					<Typography variant="subtitle2" component="p" className={classes.description}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita esse tempore a dicta iusto illum voluptas possimus animi quam architecto.</Typography>
-					<Button to={formulaire} component={RouterLink} className={classes.applyButton} target="_blank" variant="outlined" color="primary">Apply here</Button>
+					<Button to={VISA_APPLICATION} component={RouterLink} className={classes.applyButton} variant="outlined" color="primary">Apply here</Button>
 				</section>
 				<section item xs={12} lg={4} className={classes.service}>
 					<ApplicationCog className={classes.serviceIcon} />
 					<Typography variant="h5" color="primary">Temporary work permit</Typography>
 					<Typography variant="subtitle2" component="p" className={classes.description}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita esse tempore a dicta iusto illum voluptas possimus animi quam architecto.</Typography>
-					<Button href={imm22} component="a" className={classes.applyButton} target="_blank"variant="outlined" color="primary">Apply here</Button>
+					<Button to={TWP} component={RouterLink} className={classes.applyButton} variant="outlined" color="primary">Apply here</Button>
 				</section>
 				<section item xs={12} lg={4} className={classes.service}>
 					<ApplicationCog className={classes.serviceIcon} />

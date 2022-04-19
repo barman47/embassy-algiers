@@ -64,6 +64,13 @@ const TravellingRequirements = () => {
                     <Typography variant="body1" component="p">Health authorities recommend vaccination against cholera and yellow fever from all visitors. Anti-malaria vaccination is also recommended.</Typography>
                 </Box>
                 <Box component="article">
+                    <Typography variant="h6">Covid requirements:</Typography>
+                    <Typography variant="body1" component="p">Government Covid Requirement before Travelling:  Visit this link for full information. ncdc </Typography>
+                    <Typography variant="body2" component="p">
+                        <Link component="a" href="https://ncdc.gov.ng/" target="_blank">https://ncdc.gov.ng/</Link>
+                    </Typography>
+                </Box>
+                <Box component="article">
                     <Typography variant="h6">Export of Antiquities:</Typography>
                     <Typography variant="body1" component="p">No art treasure may be taken out of the country without written approval from the appropriate Nigerian authorities. This approval must come from the Department of Antiquities or National Museum in Lagos or Jos. The law prohibiting the export of all forms of antiquity, including all ritual as well as contemporary art objects is strictly enforced.</Typography>
                     <Typography variant="body1" component="p">
