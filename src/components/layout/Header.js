@@ -29,6 +29,7 @@ import {
 	GOVERNMENT_AND_POLITICS, 
 	NEWS, 
 	SERVICES,
+	CONTACT,
 	TOURISM,
 	TRADE_AND_INVESTMENT,
 	VIEW_NIGERIA 
@@ -237,7 +238,7 @@ const Header = (props) => {
 							Nigerian Newspapers
 						</Typography>
 					</Box>
-					<Button component={RouterLink} className={classes.contactButton}>Contact</Button>
+					<Button component={RouterLink} to={CONTACT} className={classes.contactButton}>Contact</Button>
 					<Menu
 						id="view-nigeria-menu"
 						anchorEl={anchorEl2}

@@ -1,5 +1,6 @@
 export const VIEW_NIGERIA = '/viewNigeria';
 export const SERVICES = '/consulerServices';
+export const CONTACT = '/contact';
 export const NEWS = '/newsAndUpdates';
 export const GALLERY = '/gallery';
 export const PASSPORT_APPLICATION = '/passportApplication';

@@ -12,6 +12,7 @@ import {
 	GOVERNMENT_AND_POLITICS,
 	NEWS, 
 	SERVICES, 
+	CONTACT,
 	VIEW_NIGERIA,
 	PASSPORT_APPLICATION,
 	TRADE_AND_INVESTMENT,
@@ -30,6 +31,9 @@ import GovernmentAndPolitics from './pages/viewNigeria/GovernmentAndPolitics';
 import TradeAndInvestment from './pages/viewNigeria/TradeAndInvestment';
 import VisaApplication from './pages/services/VisaApplication';
 import TemporaryWorkPermit from './pages/services/TemporaryWorkPermit';
+import Contact from './pages/contact';
+
+import ScrollToTop from './components/layout/ScrollToTop';
 
 const App = () => {
 	const theme = createTheme({
@@ -80,19 +84,22 @@ const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<Router>
-				<Route path="/" exact component={Home} />
-				<Route path={VIEW_NIGERIA} exact component={ViewNigeria} />
-				<Route path={GALLERY} exact component={Gallery} />
-				<Route path={NEWS} exact component={News} />
-				<Route path={SERVICES} exact component={ConsulerServices} />
-				<Route path={PASSPORT_APPLICATION} exact component={PassportApplication} />
-				<Route path={TRAVEL_REQUIREMENTS} exact component={TravellingRequirements} />
-				<Route path={TOURISM} exact component={Tourism} />
-				<Route path={ECONOMY} exact component={NigerianEconomy} />
-				<Route path={GOVERNMENT_AND_POLITICS} exact component={GovernmentAndPolitics} />
-				<Route path={TRADE_AND_INVESTMENT} exact component={TradeAndInvestment} />
-				<Route path={VISA_APPLICATION} exact component={VisaApplication} />
-				<Route path={TWP} exact component={TemporaryWorkPermit} />
+				<ScrollToTop>
+					<Route path="/" exact component={Home} />
+					<Route path={VIEW_NIGERIA} exact component={ViewNigeria} />
+					<Route path={GALLERY} exact component={Gallery} />
+					<Route path={NEWS} exact component={News} />
+					<Route path={SERVICES} exact component={ConsulerServices} />
+					<Route path={CONTACT} exact component={Contact} />
+					<Route path={PASSPORT_APPLICATION} exact component={PassportApplication} />
+					<Route path={TRAVEL_REQUIREMENTS} exact component={TravellingRequirements} />
+					<Route path={TOURISM} exact component={Tourism} />
+					<Route path={ECONOMY} exact component={NigerianEconomy} />
+					<Route path={GOVERNMENT_AND_POLITICS} exact component={GovernmentAndPolitics} />
+					<Route path={TRADE_AND_INVESTMENT} exact component={TradeAndInvestment} />
+					<Route path={VISA_APPLICATION} exact component={VisaApplication} />
+					<Route path={TWP} exact component={TemporaryWorkPermit} />
+				</ScrollToTop>
 			</Router>
 		</ThemeProvider>
 	);
