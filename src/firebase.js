@@ -1,9 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getStorage } from 'firebase/storage';
-// Follow this pattern to import other Firebase services
-// import { } from 'firebase/<service>';
 
-// TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_API_KEY,
     authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -13,8 +10,6 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_APP_ID,
     measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
-
-console.log('firebase config ', firebaseConfig);
 
 const firebaseApp = initializeApp(firebaseConfig);
 
