@@ -76,8 +76,8 @@ const ImageGallery = () => {
 		<section className={classes.root} id={GALLERY}>
 			<Typography variant="h4">Gallery</Typography><br/>
 			<ImageList rowHeight={180} className={classes.imageList}>
-				{images.map((item) => (
-				<ImageListItem key={item.img}>
+				{images.map((item, index) => (
+				<ImageListItem key={index}>
 					<img src={item.src} alt={item.alt} />
 					{/* <ImageListItemBar
 						title={item.title}
