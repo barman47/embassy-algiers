@@ -78,15 +78,6 @@ const Team = () => {
             </Typography>
             <div className={classes.team}>
                 <Paper elevation={2} className={classes.paper}>
-                    <img src={mppia} alt="Minister Political, Protocol & Information Affairs" className={classes.image} />
-                    <Typography variant="h6" align="center">
-                        Adamu Idris Mohammed
-                    </Typography>
-                    <Typography variant="subtitle2" component="p" align="center">
-                        Minister, Political, Protocol &amp; Information Affairs
-                    </Typography>
-                </Paper>
-                <Paper elevation={2} className={classes.paper}>
                     <img src={meca} alt="Minister, Economic and Cultural Affairs" className={classes.image} />
                     <Typography variant="h6" align="center">
                         Mrs. Maimunah Ibrahim Betso
@@ -105,12 +96,30 @@ const Team = () => {
                     </Typography>
                 </Paper>
                 <Paper elevation={2} className={classes.paper}>
+                    <img src={mppia} alt="Minister Political, Protocol & Information Affairs" className={classes.image} />
+                    <Typography variant="h6" align="center">
+                        Adamu Idris Mohammed
+                    </Typography>
+                    <Typography variant="subtitle2" component="p" align="center">
+                        Minister, Political, Protocol &amp; Information Affairs
+                    </Typography>
+                </Paper>
+                <Paper elevation={2} className={classes.paper}>
                     <img src={financeAattache} alt="Staff Name" className={classes.image} />
                     <Typography variant="h6" align="center">
                         Mr. Bello Yunusa Hamman-Adama
                     </Typography>
                     <Typography variant="subtitle2" component="p" align="center">
                         Finance Attaché
+                    </Typography>
+                </Paper>
+                <Paper elevation={2} className={classes.paper}>
+                    <img src={secretary} alt="First Secretary (Political Affairs & Communication)" className={classes.image} />
+                    <Typography variant="h6" align="center">
+                        Christy Ucha Obasi
+                    </Typography>
+                    <Typography variant="subtitle2" component="p" align="center">
+                        First Secretary (Political Affairs &amp; Communication)
                     </Typography>
                 </Paper>
                 <Paper elevation={2} className={classes.paper}>
@@ -129,15 +138,6 @@ const Team = () => {
                     </Typography>
                     <Typography variant="subtitle2" component="p" align="center">
                         Second Secretary
-                    </Typography>
-                </Paper>
-                <Paper elevation={2} className={classes.paper}>
-                    <img src={secretary} alt="First Secretary (Political Affairs & Communication)" className={classes.image} />
-                    <Typography variant="h6" align="center">
-                        Christy Ucha Obasi
-                    </Typography>
-                    <Typography variant="subtitle2" component="p" align="center">
-                        First Secretary (Political Affairs &amp; Communication)
                     </Typography>
                 </Paper>
             </div>
