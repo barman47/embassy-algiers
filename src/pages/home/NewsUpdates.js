@@ -15,7 +15,7 @@ import TextClamp from 'react-string-clamp';
 
 import { NEWS } from '../../routes';
 
-import img from '../../images/slide4.jpg';
+import img from '../../assets/img/slide4.jpg';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -54,7 +54,7 @@ const NewsUpdates = () => {
     <Container className={classes.root} id={NEWS}>
         <Typography variant="h4">News and Updates</Typography><br/>
         <Grid container spacing={3}>
-          <Grid item xs={30} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
               <Card className={classes.root}>
                   <CardActionArea>
                     <CardMedia

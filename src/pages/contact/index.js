@@ -15,11 +15,7 @@ import Layout from '../../components/layout';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        // backgroundColor: theme.palette.primary.main,
         padding: theme.spacing(10, 0)
-        // padding: [[theme.spacing(5), 0]],
-        // height: 'auto',
-        // minHeight: '100vh'
     },
 
     header: {
@@ -41,10 +37,6 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('sm')]: {
             gridTemplateColumns: '1fr'    
         },
-
-        // [theme.breakpoints.dowm('md')]: {
-        //     gridTemplateColumns: '1fr'
-        // },
 
         '& a': {
             color: COLORS.offBlack,

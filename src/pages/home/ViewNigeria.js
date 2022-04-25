@@ -1,72 +1,36 @@
-import { Link } from 'react-router-dom';
-
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import {
+    Paper,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    Typography
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { ArrowRight } from 'mdi-material-ui';
-
-import { COLORS } from '../../utils/constants';
-import { VIEW_NIGERIA } from '../../routes';
-
-import img from '../../images/nigeria.jpg';
+import holidayList from '../../utils/holidays.json';
+import { HOLIDAYS } from '../../routes';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        backgroundImage: `url(${img})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-        color: COLORS.offWhite,
-        // position: 'relative',
-        // top: '100vh',
-        // width: '100vw',
-        // top: '85.5vh',
-        // [theme.breakpoints.down('lg')]: {
-        //     top: '95vh'
-        // },
-        // [theme.breakpoints.down('md')]: {
-        //     top: '92vh'
-        // },
-        '& div': {
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            display: 'flex',
-            flexDirection: 'column',
-            padding: theme.spacing(4),
-        }
-    },
-
-    header: {
-        fontWeight: 500
-    },
-
-    text: {
-        color: COLORS.lightGray,
-        marginBottom: theme.spacing(5),
-        marginTop: theme.spacing(5),
-    },
-
-    button: {
-        alignSelf: 'flexStart',
-        backgroundColor: 'transparent',
-        border: `1px solid ${COLORS.offWhite}`,
-        color: COLORS.offWhite,
-        width: '15%',
-        '&:hover': {
-            backgroundColor: 'transparent',
-            border: `1px solid ${COLORS.offWhite}`,
-            color: COLORS.offWhite,
-        },
-        [theme.breakpoints.down('md')]: {
-            width: '20%',
-        },
-        [theme.breakpoints.down('md')]: {
-            width: '20%',
-        },
+        
         [theme.breakpoints.down('sm')]: {
-            width: '100%',
+            padding: theme.spacing(2),
+        },
+
+        '& h4': {
+            marginBottom: theme.spacing(2),
+
+            [theme.breakpoints.down('sm')]: {
+                fontSize: theme.spacing(2.5)
+            }
         }
+    },
+
+    table: {
+        maxWidth: '100%'
     }
 }));
 
@@ -74,22 +38,38 @@ const AboutUs = () => {
     const classes = useStyles();
 
     return (
-        <section className={classes.root} id={VIEW_NIGERIA}>
-            <div>
-                <Typography variant="h4" className={classes.header}>View Nigeria</Typography>
-                <Typography variant="body2" className={classes.text}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi soluta porro, aut ut cumque voluptatem excepturi earum dolore aliquid dignissimos?
-                </Typography>
-                <Button
-                    className={classes.button}
-                    variant="contained"
-                    to={VIEW_NIGERIA}
-                    component={Link}
-                    endIcon={<ArrowRight />}
-                >
-                    Read More
-                </Button>
-            </div>
+        <section className={classes.root} id={HOLIDAYS}>
+            <Typography variant="h4" align="center">Holidays in Nigeria and Algeria</Typography>
+            <TableContainer component={Paper}>
+                <Table className={classes.table}>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell align="center" colSpan={2}>
+                                Nigeria
+                            </TableCell>
+                            <TableCell align="center" colSpan={2}>
+                                Algeria
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell align="center">Holiday</TableCell>
+                            <TableCell align="center">Date</TableCell>
+                            <TableCell align="center">Holiday</TableCell>
+                            <TableCell align="center">Date</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {holidayList.holidays.map(({ nigeria, algeria }, index) => (
+                            <TableRow key={index}>
+                                <TableCell align="center">{nigeria.name ? nigeria.name : null}</TableCell>
+                                <TableCell align="center">{nigeria.date ? nigeria.date : null}</TableCell>
+                                <TableCell align="center">{algeria.name ? algeria.name : null}</TableCell>
+                                <TableCell align="center">{algeria.date ? algeria.date : null}</TableCell>
+                            </TableRow> 
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
         </section>
     );
 };

@@ -1,25 +1,24 @@
 import { Link as RouterLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, Typography } from '@material-ui/core';
+import { Button, Link, Typography } from '@material-ui/core';
 import { ApplicationCog } from 'mdi-material-ui';
 
 import { COLORS } from '../../utils/constants';
 import { 
-	PASSPORT_APPLICATION,
 	SERVICES,
 	TRAVEL_REQUIREMENTS,
-	VISA_APPLICATION,
-	TWP
+	VISA_APPLICATION
 } from '../../routes';
 
 import ETC from '../../assets/docs/emergency-travel-certificate.pdf';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		padding: [[theme.spacing(2), theme.spacing(4)]],
+		padding: [[theme.spacing(2), theme.spacing(5)]],
 
 		'& h4': {
 			fontWeight: 500,
+			marginBottom: theme.spacing(2),
 			textAlign: 'center'
 		},
 
@@ -36,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 	services: {
 		display: 'grid',
 		gridTemplateColumns: 'repeat(4, 1fr)',
-		gap: theme.spacing(3),
+		gap: theme.spacing(5),
 
 		[theme.breakpoints.down('md')]: {
 			gridTemplateColumns: 'repeat(2, 1fr)'
@@ -51,12 +50,12 @@ const useStyles = makeStyles((theme) => ({
 		borderRadius: theme.shape.borderRadius,
 		display: 'flex',
 		flexDirection: 'column',
-		justifyContent: 'center',
+		// justifyContent: 'center',
 		alignItems: 'center',
-		padding: theme.spacing(1),
+		padding: theme.spacing(3),
 
-		'& div': {
-			// marginLeft: theme.spacing(4)
+		[theme.breakpoints.down('sm')]: {
+			padding: theme.spacing(2)
 		},
 
 		'& h5': {
@@ -67,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
 	serviceIcon: {
 		color: theme.palette.primary.main,
+		marginBottom: theme.spacing(2),
 		fontSize: theme.spacing(4)
 	},
 	
@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	applyButton: {
-		marginBottom: theme.spacing(2)
+		// marginBottom: theme.spacing(2)
 	},
 }));
 
@@ -85,36 +85,29 @@ const Services = () => {
 	return (
 		<section className={classes.root} id={SERVICES}>
 			<Typography className={classes.headertext} variant="h4">Consuler Services</Typography>
-			<Typography variant="h6" className={classes.subtitle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, ea.</Typography>
 			<div className={classes.services}>
-				<section item xs={12} lg={4} className={classes.service}>
+				<section xs={12} lg={4} className={classes.service}>
 					<ApplicationCog className={classes.serviceIcon} />
 					<Typography variant="h5" color="primary">Visa Application</Typography>
-					<Typography variant="subtitle2" component="p" className={classes.description}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita esse tempore a dicta iusto illum voluptas possimus animi quam architecto.</Typography>
+					<Typography variant="subtitle2" component="p" className={classes.description}>Applicaton for temporary work permit, rourism visa, business visa and STR visa.</Typography>
 					<Button to={VISA_APPLICATION} component={RouterLink} className={classes.applyButton} variant="outlined" color="primary">Apply here</Button>
 				</section>
-				<section item xs={12} lg={4} className={classes.service}>
-					<ApplicationCog className={classes.serviceIcon} />
-					<Typography variant="h5" color="primary">Temporary work permit</Typography>
-					<Typography variant="subtitle2" component="p" className={classes.description}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita esse tempore a dicta iusto illum voluptas possimus animi quam architecto.</Typography>
-					<Button to={TWP} component={RouterLink} className={classes.applyButton} variant="outlined" color="primary">Apply here</Button>
-				</section>
-				<section item xs={12} lg={4} className={classes.service}>
+				<section xs={12} lg={4} className={classes.service}>
 					<ApplicationCog className={classes.serviceIcon} />
 					<Typography variant="h5" color="primary">Passport Application</Typography>
-					<Typography variant="subtitle2" component="p" className={classes.description}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita esse tempore a dicta iusto illum voluptas possimus animi quam architecto.</Typography>
-					<Button to={PASSPORT_APPLICATION} component={RouterLink} className={classes.applyButton} variant="outlined" color="primary">Apply here</Button>
+					<Typography variant="subtitle2" component="p" className={classes.description}>The Embassy of Nigeria in Algiers does not process passport application. But applicants can visit the <Link component="a" underline="always" href="https://portal.immigration.gov.ng/passport/epassport" target="_blank">Nigeria Immigration Service</Link> website for more information on how to apply.</Typography>
+					<Button href="https://portal.immigration.gov.ng/passport/epassport" component="a" target="_blank" className={classes.applyButton} variant="outlined" color="primary">Apply here</Button>
 				</section>
-				<section item xs={12} lg={4} className={classes.service}>
+				<section xs={12} lg={4} className={classes.service}>
 					<ApplicationCog className={classes.serviceIcon} />
 					<Typography variant="h5" color="primary">Emergency Travel Certificate(ETC)</Typography>
-					<Typography variant="subtitle2" component="p" className={classes.description}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita esse tempore a dicta iusto illum voluptas possimus animi quam architecto.</Typography>
+					<Typography variant="subtitle2" component="p" className={classes.description}>Application for Emergency Travell Certificate.</Typography>
 					<Button component="a" href={ETC} target="_blank" className={classes.applyButton} variant="outlined" color="primary">Apply here</Button>
 				</section>
-				<section item xs={12} lg={4} className={classes.service}>
+				<section xs={12} lg={4} className={classes.service}>
 					<ApplicationCog className={classes.serviceIcon} />
 					<Typography variant="h5" color="primary">Travelling Requirements</Typography>
-					<Typography variant="subtitle2" component="p" className={classes.description}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita esse tempore a dicta iusto illum voluptas possimus animi quam architecto.</Typography>
+					<Typography variant="subtitle2" component="p" className={classes.description}>Information for travellers visiting Nigeria. This includes information about immigration, COVID requirements, etc.</Typography>
 					<Button to={TRAVEL_REQUIREMENTS} component={RouterLink} className={classes.applyButton} variant="outlined" color="primary">Apply here</Button>
 				</section>
 			</div>

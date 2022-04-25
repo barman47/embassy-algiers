@@ -1,6 +1,5 @@
 import { makeStyles, Box, Typography } from '@material-ui/core';
 
-import background from '../../images/building.jpg';
 import { COLORS } from '../../utils/constants';
 
 const mainSection = makeStyles((theme) => ({
@@ -8,7 +7,7 @@ const mainSection = makeStyles((theme) => ({
 		height: '100vh',
 		width: '100%',
 		position: 'relative',
-		backgroundImage:`url(${background})`, 
+		backgroundImage:`url(https://firebasestorage.googleapis.com/v0/b/embassyofnigeriaalgiers.appspot.com/o/PHOTO-2022-04-07-11-02-42.jpg?alt=media&token=ae7add6c-26da-47b7-bc5a-aade42da9cc9)`, 
 		backgroundPosition: 'center',
 		backgroundSize: 'cover',
 		backgroundRepeat: 'no-repeat',

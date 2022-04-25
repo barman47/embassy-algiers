@@ -15,12 +15,12 @@ import {
 	Slide,
 	Toolbar,
 	Typography,
-	useScrollTrigger 
+	useScrollTrigger
 } from '@material-ui/core';
-import { Menu as MenuIcon } from 'mdi-material-ui';
+import { Close, Menu as MenuIcon } from 'mdi-material-ui';
 
 import { COLORS } from '../../utils/constants';
-import logo from '../../images/coat-of-arms.png';
+import logo from '../../assets/img/coat-of-arms.png';
 
 import MobileNav from './MobileNav';
 import { 
@@ -38,6 +38,27 @@ import {
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexWrap: 1,
+	},
+
+	visitingHours: {
+		backgroundColor: COLORS.white,
+		display: 'flex',
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		padding: theme.spacing(1),
+
+		'& p': {
+			color: COLORS.offBlack,
+			textTransform: 'uppercase',
+			padding: theme.spacing(1),
+			fontWeight: 500,
+			
+			[theme.breakpoints.down('sm')]: {
+				fontSize: theme.spacing(0.9),
+				padding: theme.spacing(0.2),
+			}
+		}
 	},
 
 	toolbar: {
@@ -137,6 +158,7 @@ const Header = (props) => {
 	const location = useLocation();
 
     const [drawerOpen, setDrawerOpen] = useState(false);
+	const [open, setOpen] = useState(true);
 	const [anchorEl, setAnchorEl] = useState(null);
 	const [anchorEl2, setAnchorEl2] = useState(null);
 
@@ -189,6 +211,14 @@ const Header = (props) => {
 	return (
 		<HideOnScroll {...props}>
 			<AppBar position="fixed" className={classes.root}>
+				<Slide direction="down" in={open} unmountOnExit>
+					<div className={classes.visitingHours}>
+						<Typography variant="body2" component="p">Consular visiting hours: Mondays and Wednesdays from 10:00am to 01:00pm.</Typography>
+						<IconButton size="small" onClick={() => setOpen(false)}>
+							<Close />
+						</IconButton>
+					</div>
+				</Slide>
 				<Toolbar className={classes.toolbar}>
 					<RouterLink to="/"><img src={logo} className={classes.logo} alt="Nigerian Coat of Arms" /></RouterLink>
 					<Box component="div" className={classes.links}>
@@ -209,6 +239,9 @@ const Header = (props) => {
 										{link.text}
 									</AnimatedLink>
 								)
+							}
+							if (location.pathname !== '/' && link.url === SERVICES) {
+								return null;
 							}
 							return (
 								<RouterLink 
@@ -248,7 +281,7 @@ const Header = (props) => {
 					>
 						<List>
 							{nigerianNewspapers.map((link, index) => (
-								<ListItem onClick={handleClose} ><Link component="a" href={link.url} target="_blank">{link.text}</Link></ListItem>
+								<ListItem key={index} onClick={handleClose} ><Link component="a" href={link.url} target="_blank">{link.text}</Link></ListItem>
 							))}
 						</List>
 					</Menu>

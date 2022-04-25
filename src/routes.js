@@ -1,4 +1,5 @@
 export const VIEW_NIGERIA = '/viewNigeria';
+export const HOLIDAYS = '/holidays';
 export const SERVICES = '/consulerServices';
 export const CONTACT = '/contact';
 export const NEWS = '/newsAndUpdates';
@@ -10,4 +11,3 @@ export const ECONOMY = '/nigerianEconomy';
 export const GOVERNMENT_AND_POLITICS = '/governmentAndPolitics';
 export const TRADE_AND_INVESTMENT = '/tradeAndInvestment';
 export const VISA_APPLICATION = '/visaApplication';
-export const TWP = '/temporaryWorkPermit';

@@ -5,37 +5,32 @@ import Home from './pages/home';
 import ViewNigeria from './pages/viewNigeria';
 import Gallery from './pages/gallery';
 import News from './pages/news';
-import ConsulerServices from './pages/services';
 
 import { 
 	GALLERY, 
 	GOVERNMENT_AND_POLITICS,
-	NEWS, 
-	SERVICES, 
+	NEWS,
 	CONTACT,
 	VIEW_NIGERIA,
-	PASSPORT_APPLICATION,
 	TRADE_AND_INVESTMENT,
 	TRAVEL_REQUIREMENTS,
 	TOURISM,
-	TWP,
 	ECONOMY,
 	VISA_APPLICATION
 } from './routes';
 
-import PassportApplication from './pages/services/PassportApplication';
 import TravellingRequirements from './pages/services/TravellingRequirements';
 import Tourism from './pages/viewNigeria/Tourism';
 import NigerianEconomy from './pages/viewNigeria/NigerianEconomy';
 import GovernmentAndPolitics from './pages/viewNigeria/GovernmentAndPolitics';
 import TradeAndInvestment from './pages/viewNigeria/TradeAndInvestment';
 import VisaApplication from './pages/services/VisaApplication';
-import TemporaryWorkPermit from './pages/services/TemporaryWorkPermit';
 import Contact from './pages/contact';
 
 import ScrollToTop from './components/layout/ScrollToTop';
 
 const App = () => {
+	
 	const theme = createTheme({
 		overrides: {
 			MuiButton: {
@@ -89,16 +84,13 @@ const App = () => {
 					<Route path={VIEW_NIGERIA} exact component={ViewNigeria} />
 					<Route path={GALLERY} exact component={Gallery} />
 					<Route path={NEWS} exact component={News} />
-					<Route path={SERVICES} exact component={ConsulerServices} />
 					<Route path={CONTACT} exact component={Contact} />
-					<Route path={PASSPORT_APPLICATION} exact component={PassportApplication} />
 					<Route path={TRAVEL_REQUIREMENTS} exact component={TravellingRequirements} />
 					<Route path={TOURISM} exact component={Tourism} />
 					<Route path={ECONOMY} exact component={NigerianEconomy} />
 					<Route path={GOVERNMENT_AND_POLITICS} exact component={GovernmentAndPolitics} />
 					<Route path={TRADE_AND_INVESTMENT} exact component={TradeAndInvestment} />
 					<Route path={VISA_APPLICATION} exact component={VisaApplication} />
-					<Route path={TWP} exact component={TemporaryWorkPermit} />
 				</ScrollToTop>
 			</Router>
 		</ThemeProvider>

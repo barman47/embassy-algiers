@@ -1,21 +1,16 @@
+import { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import {
 	Button,
 	ImageList,
 	ImageListItem,
-	IconButton,
-	ImageListItemBar,
 	Typography
 } from '@material-ui/core';
-import { Information } from 'mdi-material-ui';
+import { getDownloadURL, list, ref } from 'firebase/storage';
+import { storage } from '../../firebase';
 
 import { GALLERY } from '../../routes';
-
-import slide1 from '../../images/slide1.jpg';
-import slide2 from '../../images/slide2.jpg';
-import slide3 from '../../images/slide3.jpg';
-import slide4 from '../../images/slide4.jpg';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -42,43 +37,49 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-const itemData = [
-    {
-        img: slide1,
-        title: 'Image',
-        author: 'author',
-    },
-
-    {
-        img: slide2,
-        title: 'Image',
-        author: 'author',
-    },
-
-    {
-        img: slide3,
-        title: 'Image',
-        author: 'author',
-    },
-
-    {
-        img: slide4,
-        title: 'Image',
-        author: 'author',
-    },
-];
-
-const Gallery = () => {
+const ImageGallery = () => {
   	const classes = useStyles();
+
+	  const [images, setImages] = useState([]);
+
+		useEffect(() => {
+			getFiles();
+		}, []);
+
+	  const getFiles = async() => {
+		const listRef = ref(storage, '');
+		let url;
+		list(listRef, { maxResults: 4 })
+			.then((res) => {
+				res.prefixes.forEach((folderRef) => {
+				// All the prefixes under listRef.
+				// You may call listAll() recursively on them.
+				});
+				res.items.forEach(async (itemRef) => {
+					url = await await getDownloadURL(itemRef);
+					setImages((images) => setImages([...images, {
+						src: url,
+						alt: "Image Thumbnail",
+						thumbnail: url,
+						thumbnailWidth: 320,
+        				thumbnailHeight: 174,
+						onClick: () => {},
+						onTouchEnd: () => {},
+					}]))
+				});
+			}).catch((error) => {
+				// Uh-oh, an error occurred!
+			});
+	};
 
 	return (
 		<section className={classes.root} id={GALLERY}>
 			<Typography variant="h4">Gallery</Typography><br/>
 			<ImageList rowHeight={180} className={classes.imageList}>
-				{itemData.map((item) => (
+				{images.map((item) => (
 				<ImageListItem key={item.img}>
-					<img src={item.img} alt={item.title} />
-					<ImageListItemBar
+					<img src={item.src} alt={item.alt} />
+					{/* <ImageListItemBar
 						title={item.title}
 						subtitle={<span>by: {item.author}</span>}
 						actionIcon={
@@ -86,7 +87,7 @@ const Gallery = () => {
 								<Information />
 							</IconButton>
 						}
-					/>
+					/> */}
 				</ImageListItem>
 				))}
 			</ImageList>
@@ -95,4 +96,4 @@ const Gallery = () => {
 	);
 };
 
-export default Gallery;
+export default ImageGallery;

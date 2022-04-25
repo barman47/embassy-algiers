@@ -3,7 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 
-import ambassador from '../..//images/ambassador.jpg';
+import meca from '../../assets/img/meca.jpg';
+import mppia from '../../assets/img/mppia.jpg';
+import mcem from '../../assets/img/mcem.jpg';
+import financeAattache from '../../assets/img/finance-attache.jpg';
+import hoc from '../../assets/img/hoc.jpg';
+import secretary2 from '../../assets/img/secretary-2.jpeg';
+import secretary from '../../assets/img/secretary.jpg';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -11,8 +17,7 @@ const useStyles = makeStyles(theme => ({
         flexDirection: 'column',
         alignItems: 'center',
         marginTop: theme.spacing(10),
-        padding: theme.spacing(4),
-        // width: '100vw'
+        padding: theme.spacing(4)
     },
 
     team: {
@@ -30,22 +35,21 @@ const useStyles = makeStyles(theme => ({
         },
         [theme.breakpoints.down('sm')]: {
             gridTemplateColumns: '1fr',
-            marginTop: theme.spacing(25),
+            marginTop: theme.spacing(20),
         }
     },
 
     paper: {
         display: 'flex',
         flexDirection: 'column',
-        cursor: 'pointer',
         alignItems: 'center',
+        marginBottom: theme.spacing(5),
         paddingBottom: theme.spacing(2),
         paddingLeft: theme.spacing(2),
         paddingRight: theme.spacing(2),
         transition: '0.3s linear all',
+
         '&:hover': {
-            // position: 'relative',
-            // top: - 20
             transform: 'translateY(-10px)'
         }
     },
@@ -58,13 +62,10 @@ const useStyles = makeStyles(theme => ({
 
     image: {
         borderRadius: '50%',
-        boxShadow: `0px 0px 10px rgba(0, 0, 0, 0.5)`,
+        border: '1px solid rgb(224, 224, 224)',
         marginTop: '-50%',
         transition: '0.3s linear all',
-        width: '90%',
-        '&:hover': {
-            boxShadow: `0px 0px 20px rgba(0, 0, 0, 0.5)`,
-        }
+        width: '90%'
     }
 }));
 
@@ -77,75 +78,66 @@ const Team = () => {
             </Typography>
             <div className={classes.team}>
                 <Paper elevation={2} className={classes.paper}>
-                    <img src={ambassador} alt="Staff Name" className={classes.image} />
-                    <Typography variant="h6">
-                        Staff Name
+                    <img src={mppia} alt="Minister Political, Protocol & Information Affairs" className={classes.image} />
+                    <Typography variant="h6" align="center">
+                        Adamu Idris Mohammed
                     </Typography>
-                    <Typography variant="subtitle2">
-                        Staff, Position
-                    </Typography>
-                </Paper>
-                <Paper elevation={2} className={classes.paper}>
-                    <img src={ambassador} alt="Staff Name" className={classes.image} />
-                    <Typography variant="h6">
-                        Staff Name
-                    </Typography>
-                    <Typography variant="subtitle2">
-                        Staff, Position
+                    <Typography variant="subtitle2" component="p" align="center">
+                        Minister, Political, Protocol &amp; Information Affairs
                     </Typography>
                 </Paper>
                 <Paper elevation={2} className={classes.paper}>
-                    <img src={ambassador} alt="Staff Name" className={classes.image} />
-                    <Typography variant="h6">
-                        Staff Name
+                    <img src={meca} alt="Minister, Economic and Cultural Affairs" className={classes.image} />
+                    <Typography variant="h6" align="center">
+                        Mrs. Maimunah Ibrahim Betso
                     </Typography>
-                    <Typography variant="subtitle2">
-                        Staff, Position
-                    </Typography>
-                </Paper>
-                <Paper elevation={2} className={classes.paper}>
-                    <img src={ambassador} alt="Staff Name" className={classes.image} />
-                    <Typography variant="h6">
-                        Staff Name
-                    </Typography>
-                    <Typography variant="subtitle2">
-                        Staff, Position
+                    <Typography variant="subtitle2" component="p" align="center">
+                        Minister, Economic and Cultural Affairs
                     </Typography>
                 </Paper>
                 <Paper elevation={2} className={classes.paper}>
-                    <img src={ambassador} alt="Staff Name" className={classes.image} />
-                    <Typography variant="h6">
-                        Staff Name
+                    <img src={mcem} alt="Minister, Consular & Education Matters" className={classes.image} />
+                    <Typography variant="h6" align="center">
+                        Rabi Jumai Usman
                     </Typography>
-                    <Typography variant="subtitle2">
-                        Staff, Position
-                    </Typography>
-                </Paper>
-                <Paper elevation={2} className={classes.paper}>
-                    <img src={ambassador} alt="Staff Name" className={classes.image} />
-                    <Typography variant="h6">
-                        Staff Name
-                    </Typography>
-                    <Typography variant="subtitle2">
-                        Staff, Position
+                    <Typography variant="subtitle2" component="p" align="center">
+                        Minister, Consular &amp; Education Matters
                     </Typography>
                 </Paper>
                 <Paper elevation={2} className={classes.paper}>
-                    <img src={ambassador} alt="Staff Name" className={classes.image} />
-                    <Typography variant="h6">
-                        Staff Name
+                    <img src={financeAattache} alt="Staff Name" className={classes.image} />
+                    <Typography variant="h6" align="center">
+                        Mr. Bello Yunusa Hamman-Adama
                     </Typography>
-                    <Typography variant="subtitle2">
-                        Staff, Position
+                    <Typography variant="subtitle2" component="p" align="center">
+                        Finance Attaché
                     </Typography>
                 </Paper>
                 <Paper elevation={2} className={classes.paper}>
-                    <img src={ambassador} alt="Staff Name" className={classes.image} />
-                    <Typography variant="h6">
-                        Staff Name
+                    <img src={hoc} alt="Staff Name" className={classes.image} />
+                    <Typography variant="h6" align="center">
+                        Aminat Abdul-Wahab Idris
                     </Typography>
-                    <Typography variant="subtitle2">
-                        Staff, Position
+                    <Typography variant="subtitle2" component="p" align="center">
+                        Head of Chancery
+                    </Typography>
+                </Paper>
+                <Paper elevation={2} className={classes.paper}>
+                    <img src={secretary2} alt="Second Secretary" className={classes.image} />
+                    <Typography variant="h6" align="center">
+                        Haruna Maina Gabai
+                    </Typography>
+                    <Typography variant="subtitle2" component="p" align="center">
+                        Second Secretary
+                    </Typography>
+                </Paper>
+                <Paper elevation={2} className={classes.paper}>
+                    <img src={secretary} alt="First Secretary (Political Affairs & Communication)" className={classes.image} />
+                    <Typography variant="h6" align="center">
+                        Christy Ucha Obasi
+                    </Typography>
+                    <Typography variant="subtitle2" component="p" align="center">
+                        First Secretary (Political Affairs &amp; Communication)
                     </Typography>
                 </Paper>
             </div>

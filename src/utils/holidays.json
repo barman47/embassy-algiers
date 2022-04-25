@@ -1,0 +1,125 @@
+{
+    "holidays": [
+        {
+            "nigeria": {
+                "name": "New Year's Day",
+                "date": "Mon, 3 Jan 2022"
+            },
+
+            "algeria": {
+                "name": "New Year's Day",
+                "date": "Sat, 1 Jan 2022"
+            }
+        },
+        {
+            "nigeria": {
+                "name": "Good Friday",
+                "date": "Fri, 15 Apr 2022"
+            },
+
+            "algeria": {
+                "name": "Yennayer",
+                "date": "Wed, 12 Jan 2022"
+            }
+        },
+        {
+            "nigeria": {
+                "name": "Easter Monday",
+                "date": "Mon, 18 Apr 2022"
+            },
+
+            "algeria": {
+                "name": "Eid al-Fitr",
+                "date": "Likely Tue, 3 May 2022"
+            }
+        },
+        {
+            "nigeria": {
+                "name": "Labour Day",
+                "date": "Sun, 1 May 2022"
+            },
+
+            "algeria": {
+                "name": "Independence Day of Algeria",
+                "date": "Tue, 5 Jul 2022"
+            }
+        },
+        {
+            "nigeria": {
+                "name": "Eid al-Fitr",
+                "date": "Likely 2–4 May 2022*"
+            },
+
+            "algeria": {
+                "name": "Eid al-Adha",
+                "date": "Likely 9–11 Jul 2022*"
+            }
+        },
+        {
+            "nigeria": {
+                "name": "Democracy Day",
+                "date": "Sun, 12 Jun 2022"
+            },
+
+            "algeria": {
+                "name": "Islamic New Year",
+                "date": "Likely 29–30 Jul 2022*"
+            }
+        },
+        {
+            "nigeria": {
+                "name": "Eid al-Adha",
+                "date": "Likely 9–11 Jul 2022*"
+            },
+
+            "algeria": {
+                "name": "Ashura",
+                "date": "Likely 7–8 Aug 2022*"
+            }
+        },
+        {
+            "nigeria": {
+                "name": "Nigerian Independence Day",
+                "date": "Sat, 1 Oct 2022"
+            },
+
+            "algeria": {
+                "name": "Prophet's Birthday",
+                "date": "Likely 7–8 Oct 2022*"
+            }
+        },
+        {
+            "nigeria": {
+                "name": "Prophet's Birthday",
+                "date": "Likely 7–8 Oct 2022*"
+            },
+
+            "algeria": {
+                "name": "Anniversary of the Revolution",
+                "date": "Tue, 1 Nov 2022"
+            }
+        },
+        {
+            "nigeria": {
+                "name": "Christmas Day",
+                "date": "Sun, 25 Dec 2022"
+            },
+
+            "algeria": {
+                "name": "",
+                "date": ""
+            }
+        },
+        {
+            "nigeria": {
+                "name": "Boxing Day",
+                "date": "Mon, 26 Dec 2022"
+            },
+
+            "algeria": {
+                "name": "",
+                "date": ""
+            }
+        }
+    ]
+}

@@ -2,7 +2,7 @@ import { Typography, makeStyles } from '@material-ui/core';
 // import { makeStyles } from '@mui/styles';
 
 import { COLORS, SHADOW } from '../../utils/constants'
-import img from '../../images/ambassador.jpg'
+import img from '../../assets/img/ambassador.jpg'
 
 const embassyAddress = makeStyles((theme) => ({
 	root: {
